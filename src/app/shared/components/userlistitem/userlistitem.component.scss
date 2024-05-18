@@ -1,6 +1,6 @@
 @import './../../styles/includeStyles.scss';
 
-.user-list-item-wrapper{
+.user-list-item-wrapper {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -9,13 +9,16 @@
     border-radius: 30px;
     font-size: $fnt-size-XS;
     width: fit-content;
-    > .img-wrapper{
+
+    >.img-wrapper {
         position: relative;
-        > img{
+
+        >img {
             width: 50px;
             aspect-ratio: 1;
         }
-        > .status-lamp{
+
+        >.status-lamp {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -25,23 +28,25 @@
             border: 2px solid $white;
             border-radius: 100%;
         }
-        > .status-lamp.active{
+
+        >.status-lamp.active {
             background-color: $online-green;
         }
     }
-    &:hover{
+
+    &:hover {
         background-color: $prim-color-light-hover;
     }
 }
 
-.user-list-item-wrapper.checked{
+.user-list-item-wrapper.checked {
     background-color: $prim-color-light-hover;
     color: $prim-color-bright-hover;
     font-weight: bold;
 }
 
-@media(max-width: 320px){
-    .user-list-item-wrapper{
+@media(max-width: 320px) {
+    .user-list-item-wrapper {
         font-size: $fnt-size-XXS;
     }
 }

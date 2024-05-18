@@ -216,10 +216,12 @@
                 aspect-ratio: 1;
                 padding: 4px;
                 border-radius: 50%;
+
                 >img {
                     height: 50px;
                     width: 50px;
                 }
+
                 &:hover {
                     background-color: $hover-grey;
                 }
@@ -231,7 +233,7 @@
         }
     }
 
-   
+
 
 
 

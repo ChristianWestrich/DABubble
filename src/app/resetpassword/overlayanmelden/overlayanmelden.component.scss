@@ -1,15 +1,16 @@
 @import '../../shared/styles/includeStyles.scss';
 
-.overlay-wrapper{
+.overlay-wrapper {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     height: 100vh;
     width: 100%;
     overflow: hidden;
 }
-.popup{
+
+.popup {
     position: absolute;
     right: -500px;
     bottom: 50px;
@@ -23,8 +24,19 @@
 }
 
 @keyframes showPopup {
-    0% {right: -400px}
-    20% {right: 50px}
-    80% {right: 50px}
-    100% {right: -400px}
+    0% {
+        right: -400px
+    }
+
+    20% {
+        right: 50px
+    }
+
+    80% {
+        right: 50px
+    }
+
+    100% {
+        right: -400px
+    }
 }

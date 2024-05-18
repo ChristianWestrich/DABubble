@@ -2,7 +2,8 @@
 
 .wrapper-input-field {
   position: relative;
-  > .user-list-dropdown {
+
+  >.user-list-dropdown {
     position: absolute;
     bottom: 0;
     transform: translateY(100%);
@@ -20,9 +21,11 @@
     z-index: 2;
   }
 }
+
 .user-search {
   flex-wrap: wrap;
-  > .selected-user-list {
+
+  >.selected-user-list {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -30,20 +33,24 @@
     width: unset;
     aspect-ratio: unset;
     background-color: unset;
-    > .user-chip {
+
+    >.user-chip {
       display: flex;
       align-items: center;
       gap: 15px;
       padding: 3px 10px;
       border-radius: 35px;
       background-color: $prim-color-light-hover;
-      > img {
+
+      >img {
         width: 34px;
         aspect-ratio: 1;
       }
-      > button {
+
+      >button {
         width: 24px;
-        > .back-btn-icon {
+
+        >.back-btn-icon {
           mask-image: url(./../../../../assets/icons/close.svg);
         }
       }

@@ -6,23 +6,11 @@
 
 <div class="form-field-textarea-style2 pad20">
   <div class="textarea-field-wrapper">
-    <emoji-mart
-      *ngIf="showEmojiPicker"
-      [totalFrequentLines]="1"
-      [showPreview]="false"
-      set="google"
-      [darkMode]="false"
-      color="#444DF2"
-      (emojiSelect)="addEmoji($event)"
-      (click)="$event.stopPropagation()"
-    ></emoji-mart>
+    <emoji-mart *ngIf="showEmojiPicker" [totalFrequentLines]="1" [showPreview]="false" set="google" [darkMode]="false"
+      color="#444DF2" (emojiSelect)="addEmoji($event)" (click)="$event.stopPropagation()"></emoji-mart>
     <div class="container">
-      <textarea
-        [(ngModel)]="newMessage.content"
-        placeholder="Starte eine neue Nachricht"
-        name="description"
-        #textarea
-      ></textarea>
+      <textarea [(ngModel)]="newMessage.content" placeholder="Starte eine neue Nachricht" name="description"
+        #textarea></textarea>
       <div class="files-wrapper">
         <div class="file" *ngFor="let file of files; let idx = index">
           <img [src]="getFileImgPath(file.name)" alt="fileImg" />
@@ -36,38 +24,18 @@
       </div>
       <div class="icons">
         <div class="left-side">
-          <img
-            id="openFile"
-            (click)="openFileExplorer()"
-            src="assets/icons/addgrey.svg"
-            alt=""
-          />
+          <img id="openFile" (click)="openFileExplorer()" src="assets/icons/addgrey.svg" alt="" />
           <div class="line"></div>
 
-          <img
-            id="openEmoji"
-            src="assets/icons/sentiment_satisfiedsmiley.svg"
-            (click)="toggleEmojiPicker()"
-            #emojiPicker
-            alt=""
-          />
+          <img id="openEmoji" src="assets/icons/sentiment_satisfiedsmiley.svg" (click)="toggleEmojiPicker()"
+            #emojiPicker alt="" />
 
-          <img
-            id="openUserList"
-            src="assets/icons/alternate_email.svg"
-            alt=""
-            (click)="toggleUserList()"
-            #userListDiv
-          />
+          <img id="openUserList" src="assets/icons/alternate_email.svg" alt="" (click)="toggleUserList()"
+            #userListDiv />
         </div>
 
         <div class="right-side">
-          <img
-            class="sendBtn"
-            (click)="sendNewMessage()"
-            src="assets/icons/Sendicon.svg"
-            alt=""
-          />
+          <img class="sendBtn" (click)="sendNewMessage()" src="assets/icons/Sendicon.svg" alt="" />
         </div>
       </div>
     </div>

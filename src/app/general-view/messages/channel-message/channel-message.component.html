@@ -26,8 +26,7 @@
     @if (index == 0) { <div class="timestamp">
       <img src="assets/icons/Line.png" alt="" />
       <div class="timestamp-time">{{ this.getTimestamp(msg).weekday }}, {{
-        this.getTimestamp(msg).day}} {{this.getTimestamp(msg).month}}</div><img src="assets/icons/Line.png"
-        alt="" />
+        this.getTimestamp(msg).day}} {{this.getTimestamp(msg).month}}</div><img src="assets/icons/Line.png" alt="" />
     </div>}
 
     <app-message-container (click)="overlayCtrlService.openThread(channel, msg)" [message]="msg"

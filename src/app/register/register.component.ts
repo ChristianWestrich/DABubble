@@ -31,12 +31,12 @@ export class RegisterComponent {
   isLoginShowen = true;
   animationService = inject(AnimationService);
   chooseAvatar = false;
-  animationPlayed: boolean = false
-  mobileAnimation: boolean = true
+  animationPlayed: boolean = false;
+  mobileAnimation: boolean = true;
 
   constructor() {
     setTimeout(() => {
-      this.mobileAnimation = false
+      this.mobileAnimation = false;
     }, 2000);
   }
 
@@ -45,13 +45,12 @@ export class RegisterComponent {
     this.checkAnimationPlayed();
   }
   ngOnInit() {
-    this.checkAnimationPlayed()
+    this.checkAnimationPlayed();
   }
-
 
   checkAnimationPlayed() {
     const played = sessionStorage.getItem('animationPlayed');
-    this.animationPlayed = played == 'true'
+    this.animationPlayed = played == 'true';
   }
 
   showPwComponent(event: boolean) {
@@ -70,7 +69,6 @@ export class RegisterComponent {
     this.isSignIsShowen = true;
   }
 
-
   showMain(event: boolean) {
     this.isLoginShowen = true;
     this.isResetPwIsShowen = false;
@@ -84,5 +82,4 @@ export class RegisterComponent {
     this.isResetPwIsShowen = false;
     this.isSignIsShowen = false;
   }
-
 }

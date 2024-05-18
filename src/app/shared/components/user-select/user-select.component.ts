@@ -23,13 +23,13 @@ export class UserSelectComponent {
 
   userService = inject(UserService);
 
-  unsubUsersList: Subscription
+  unsubUsersList: Subscription;
   userList: User[] = [];
   filteredUserList: User[] = [];
 
   constructor() {
-    this.unsubUsersList = this.userService.usersList$.subscribe(data => {
-      this.userList = data
+    this.unsubUsersList = this.userService.usersList$.subscribe((data) => {
+      this.userList = data;
     });
     this.filteredUserList = this.userList;
   }
@@ -41,12 +41,11 @@ export class UserSelectComponent {
 
   filterUsers(prompt: string) {
     if (prompt[0] == '@') {
-      this.filteredUserList = this.userList
+      this.filteredUserList = this.userList;
     } else {
-      
       this.filteredUserList = this.userList.filter((user) =>
         user.name.toLowerCase().includes(prompt.toLowerCase())
-    );
+      );
     }
   }
 
@@ -59,6 +58,6 @@ export class UserSelectComponent {
     }
   }
   ngOnDestroy(): void {
-    this.unsubUsersList.unsubscribe()
+    this.unsubUsersList.unsubscribe();
   }
 }

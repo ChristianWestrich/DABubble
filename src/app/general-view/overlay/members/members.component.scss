@@ -15,11 +15,12 @@
   opacity: 0px;
   background-color: white;
 
-  > div {
+  >div {
     display: flex;
     justify-content: space-between;
     gap: 5px;
-    > h3 {
+
+    >h3 {
       margin: 0;
       font-family: "Nunito";
       font-size: 24px;
@@ -28,9 +29,11 @@
       text-align: left;
       color: $black;
     }
-    > .back-btn {
+
+    >.back-btn {
       width: 40px;
-      > .back-btn-icon {
+
+      >.back-btn-icon {
         mask-image: url(./../../../../assets/icons/close.svg);
       }
     }
@@ -53,7 +56,7 @@
   gap: 15px;
   padding: 12px 29px 12px 29px;
 
-  > p {
+  >p {
     margin: 0;
   }
 

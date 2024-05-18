@@ -44,7 +44,7 @@ import { DevHeaderComponent } from '../shared/components/dev-header/dev-header.c
     ChannelMessageComponent,
     ThreadComponent,
     WorkspaceMenuComponent,
-    DevHeaderComponent
+    DevHeaderComponent,
   ],
   templateUrl: './general-view.component.html',
   styleUrl: './general-view.component.scss',
@@ -67,15 +67,14 @@ export class GeneralViewComponent {
   messageService = inject(MessageService);
   registerService = inject(RegisterService);
   directMessageService = inject(DirectMessageService);
-  threadService = inject(ThreadsService)
+  threadService = inject(ThreadsService);
 
-
-  isLeftShowing = this.overlayCtrlService.showingLeft
-  isMiddleShowing = this.overlayCtrlService.showingMiddle
-  isRightShowing = this.overlayCtrlService.showingRight
-  isSearchShowing = this.overlayCtrlService.showingSearch
-  isDirectMsgShowing = this.overlayCtrlService.showingDirectMsg
-  isShwoginHeader = this.overlayCtrlService.showingHeader
+  isLeftShowing = this.overlayCtrlService.showingLeft;
+  isMiddleShowing = this.overlayCtrlService.showingMiddle;
+  isRightShowing = this.overlayCtrlService.showingRight;
+  isSearchShowing = this.overlayCtrlService.showingSearch;
+  isDirectMsgShowing = this.overlayCtrlService.showingDirectMsg;
+  isShwoginHeader = this.overlayCtrlService.showingHeader;
 
   subscription: Subscription;
 
@@ -112,8 +111,6 @@ export class GeneralViewComponent {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
- 
 
   async onInputChange() {
     this.isSearchFieldEmpty();
@@ -155,11 +152,9 @@ export class GeneralViewComponent {
     }, 1000);
   }
 
-  
   showMiddle() {
-    this.overlayCtrlService.showingMiddle.set(false)
-    this.overlayCtrlService.showingLeft.set(true)
-    this.overlayCtrlService.showingSearch.set(true)
+    this.overlayCtrlService.showingMiddle.set(false);
+    this.overlayCtrlService.showingLeft.set(true);
+    this.overlayCtrlService.showingSearch.set(true);
   }
-
 }

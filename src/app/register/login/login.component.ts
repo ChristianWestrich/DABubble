@@ -15,7 +15,7 @@ export class LoginComponent {
   lgnDisabled: boolean = true;
   @Output() isPwForgotten = new EventEmitter();
   @Output() isShowen = new EventEmitter();
-  loginError = this.registerService.loginError
+  loginError = this.registerService.loginError;
 
   constructor(
     private router: Router,

@@ -1,13 +1,14 @@
 @import './../../styles/includeStyles.scss';
 
 
-.msg-wrapper{
+.msg-wrapper {
   position: relative;
   display: flex;
   align-items: flex-start;
   padding: 10px 5px 10px 5px;
   gap: 30px;
-  >.toolbar{
+
+  >.toolbar {
     position: absolute;
     right: 100px;
     top: 0;
@@ -17,92 +18,111 @@
     border-radius: 25px 25px 0px 25px;
     z-index: 2;
   }
-  > img{
+
+  >img {
     width: 70px;
     aspect-ratio: 1;
   }
-  &:hover{
+
+  &:hover {
     background-color: $prim-color-light-hover;
-    >.toolbar{
+
+    >.toolbar {
       opacity: 100%;
     }
-    .msg-content{
+
+    .msg-content {
       background-color: white;
     }
-    .thread-last-reply-time{
+
+    .thread-last-reply-time {
       color: black !important;
     }
   }
 }
-.change-bg-color{
+
+.change-bg-color {
   background-color: $prim-color-light-hover !important;
 }
 
-.msg-content-wrapper{
+.msg-content-wrapper {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  > .content-header{
+
+  >.content-header {
     display: flex;
     gap: 20px;
     align-items: flex-end;
     font-family: 'Nunito';
-    >.msg-creator-name{
+
+    >.msg-creator-name {
       cursor: pointer;
       font-size: $fnt-size-XS;
       font-weight: 700;
-      &:hover{
+
+      &:hover {
         color: $prim-color-bright-hover;
       }
     }
-    >.msg-time{
+
+    >.msg-time {
       font-size: $fnt-size-XXS;
       font-weight: 400;
       color: $dark-grey;
     }
   }
-  >.msg-content{
+
+  >.msg-content {
     border-radius: 0px 30px 30px 30px;
     background-color: $prim-color-light-hover;
     padding: 15px;
   }
 }
 
-.msg-footer{
+.msg-footer {
   display: flex;
   align-items: center;
   gap: 40px;
-  >.msg-thread-wrapper{
+
+  >.msg-thread-wrapper {
     display: flex;
     align-items: center;
     gap: 20px;
-    >.thread-replies{
+
+    >.thread-replies {
       cursor: pointer;
       font-size: $fnt-size-XS;
       color: $prim-color-bright-hover;
       font-weight: 400;
-      &:hover{
+
+      &:hover {
         font-weight: 700;
       }
     }
-    >.thread-last-reply-time{
+
+    >.thread-last-reply-time {
       font-size: $fnt-size-XXS;
       font-weight: 400;
       color: $dark-grey;
     }
   }
-  > .reaction-wrapper{
+
+  >.reaction-wrapper {
     display: flex;
     gap: 8px;
     align-items: center;
-    >button{
+
+    >button {
       width: 40px;
-      >.btn-icon-reactions{
+
+      >.btn-icon-reactions {
         mask-image: url('./../../../../assets/icons/add_reaction.svg');
         mask-size: 130%;
       }
     }
-    > .reaction-chip{
+
+    >.reaction-chip {
       position: relative;
       cursor: pointer;
       display: flex;
@@ -112,11 +132,12 @@
       border: 1px solid $prim-color-hover;
       border-radius: 20px;
       background-color: white;
-      > .reaction-chip-info{
+
+      >.reaction-chip-info {
         position: absolute;
         flex-direction: column;
         align-items: center;
-        top:0;
+        top: 0;
         left: 50%;
         transform: translateY(-100%);
         display: none;
@@ -125,23 +146,26 @@
         padding: 15px 10px;
         color: white;
         width: max-content;
-        >span:first-child{
+
+        >span:first-child {
           font-weight: 700;
         }
       }
-      &:hover >.reaction-chip-info{
+
+      &:hover>.reaction-chip-info {
         display: flex;
       }
     }
   }
 }
 
-.files-wrapper{
+.files-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  > .file{
+
+  >.file {
     position: relative;
     display: flex;
     align-items: center;
@@ -149,11 +173,13 @@
     padding: 8px 16px;
     background-color: white;
     border-radius: 30px;
-    > img{
+
+    >img {
       width: 40px;
       aspect-ratio: 1;
     }
-    > .file-btn-wrapper{
+
+    >.file-btn-wrapper {
       position: absolute;
       display: flex;
       align-items: center;
@@ -168,24 +194,29 @@
       border-radius: 30px;
       background-color: rgba($color: $online-green, $alpha: 0.2);
       right: 0;
-      > button{
+
+      >button {
         background-color: white;
         padding: 8px;
         width: 32px;
         box-shadow: 0px 2px 10px 0px #00000014;
       }
-      .download-btn-icon{
+
+      .download-btn-icon {
         mask-image: url(./../../../../assets/icons/download.png);
       }
-      .open-btn-icon{
+
+      .open-btn-icon {
         mask-image: url(./../../../../assets/icons/open-in-browser.png);
       }
-      .delete-btn-icon{
+
+      .delete-btn-icon {
         mask-image: url(./../../../../assets/icons/delete.png);
       }
     }
-    &:hover{
-      >.file-btn-wrapper{
+
+    &:hover {
+      >.file-btn-wrapper {
         opacity: 1;
         transition: all ease-in-out 200ms;
       }
@@ -193,10 +224,11 @@
   }
 }
 
-.active-user-msg{
+.active-user-msg {
   padding: 10px 45px 10px 10px;
   flex-direction: row-reverse;
-  >.toolbar{
+
+  >.toolbar {
     right: unset;
     left: 100px;
 
@@ -205,57 +237,69 @@
 
     }
   }
-  .content-header{
+
+  .content-header {
     flex-direction: row-reverse;
   }
-  .msg-content{
+
+  .msg-content {
     border-radius: 30px 0px 30px 30px;
     color: white;
     background-color: $prim-color-hover;
   }
-  .msg-footer{
+
+  .msg-footer {
     justify-content: flex-end;
   }
-  .reaction-wrapper{
+
+  .reaction-wrapper {
     flex-direction: row-reverse;
   }
-  .files-wrapper{
+
+  .files-wrapper {
     align-self: flex-end;
   }
-  &:hover{
-    .msg-content{
+
+  &:hover {
+    .msg-content {
       background-color: $prim-color-hover;
     }
   }
 }
 
-.toolbar{
+.toolbar {
   display: flex;
   gap: 5px;
   padding: 3px 15px 3px 20px;
   border: 1px solid $lightblue;
-  >button{
+
+  >button {
     width: 40px;
-    >.btn-icon-reactions{
+
+    >.btn-icon-reactions {
       mask-image: url('./../../../../assets/icons/add_reaction.svg');
       mask-size: 130%;
     }
-    >.btn-icon-thread{
+
+    >.btn-icon-thread {
       mask-image: url('./../../../../assets/icons/Answer.svg');
       mask-size: 130%;
-      }
-    >.btn-icon-menu{
-    mask-image: url('./../../../../assets/icons/more_vert.svg');
+    }
+
+    >.btn-icon-menu {
+      mask-image: url('./../../../../assets/icons/more_vert.svg');
     }
   }
-  >emoji-mart{
+
+  >emoji-mart {
     position: absolute;
     bottom: 0;
     transform: translateY(100%);
     right: -90px;
     z-index: 10;
   }
-  >.more-menu{
+
+  >.more-menu {
     position: absolute;
     top: 37px;
     right: 180px;
@@ -269,10 +313,12 @@
     background-color: white;
     box-shadow: 0 6px 14px 0 rgba($color: #000000, $alpha: 0.1);
     padding: 10px;
-    > button{
+
+    >button {
       border-radius: 100px;
       padding: 10px 20px;
-      &:hover{
+
+      &:hover {
         background-color: $prim-color-light-hover;
         color: $prim-color-bright-hover;
       }
@@ -280,7 +326,7 @@
   }
 }
 
-.wrapper-edit-msg{
+.wrapper-edit-msg {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -290,7 +336,8 @@
   background-color: white;
   flex-grow: 2;
   margin-left: 100px;
-  >textarea{
+
+  >textarea {
     border: none;
     outline: none;
     resize: none;
@@ -298,7 +345,8 @@
     color: $dark-grey;
     overflow: hidden;
   }
-  >.edit-msg-footer{
+
+  >.edit-msg-footer {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -307,24 +355,27 @@
     >button {
       width: 40px;
       height: 40px;
-      .btn-icon-reactions{
+
+      .btn-icon-reactions {
         mask-image: url('./../../../../assets/icons/add_reaction.svg');
         mask-size: 130%;
       }
     }
-    > emoji-mart{
+
+    >emoji-mart {
       position: absolute;
       bottom: 25px;
       left: 40px;
     }
-    >div{
+
+    >div {
       display: flex;
       gap: 32px;
     }
   }
 }
 
-.show{
+.show {
   display: flex !important;
 }
 
@@ -364,7 +415,7 @@
   .msg-footer {
     gap: 5px;
 
-    
+
     >.msg-thread-wrapper {
       gap: 20px;
 
@@ -375,12 +426,12 @@
       }
 
 
-        >.thread-last-reply-time {
-            font-size: 12px ;
-          }
-      
-
+      >.thread-last-reply-time {
+        font-size: 12px;
       }
+
+
+    }
 
     >.reaction-wrapper {
       gap: 8px;
@@ -401,6 +452,7 @@
         }
       }
     }
+
     >.thread-last-reply {
       font-size: 12px;
     }
@@ -489,8 +541,8 @@
 }
 
 @media (max-width: 500px) {
-  .msg-wrapper{
+  .msg-wrapper {
     padding: 5px;
     gap: 5px;
-  } 
+  }
 }

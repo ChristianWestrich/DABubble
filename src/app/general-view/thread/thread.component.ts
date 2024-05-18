@@ -32,8 +32,8 @@ export class ThreadComponent {
   firebaseInitService = inject(FirebaseInitService);
   messageService = inject(MessageService);
   userService = inject(UserService);
-  channelService = inject(ChannelService)
-  overlayCtrlService = inject(OverlaycontrolService)
+  channelService = inject(ChannelService);
+  overlayCtrlService = inject(OverlaycontrolService);
 
   message: Message = new Message();
   @Input() channel: Channel = new Channel();
@@ -74,9 +74,9 @@ export class ThreadComponent {
     return message;
   }
 
-  goBack(){
-    this.threadService.isShowingSig.set(false)
-    this.overlayCtrlService.showingMiddle.set(false)
-    this.overlayCtrlService.showingRight.set(true)
+  goBack() {
+    this.threadService.isShowingSig.set(false);
+    this.overlayCtrlService.showingMiddle.set(false);
+    this.overlayCtrlService.showingRight.set(true);
   }
 }

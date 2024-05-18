@@ -82,13 +82,13 @@
           </p>
           <div *ngIf="searchService.searchThreadResult.length > 0" class="thread-result">
             @for (threadResult of searchService.searchThreadResult; track threadResult) {
-              @if (threadResult.messageOfChannel == msgResult.id) {
-                <div class="thread-content">
-                  <p (click)="this.searchService.searchForChannel(msgResult); onResultClick()"><b>Thread in der
-                      Message</b> - {{ threadResult.content }}
-                  </p>
-                </div>
-              }
+            @if (threadResult.messageOfChannel == msgResult.id) {
+            <div class="thread-content">
+              <p (click)="this.searchService.searchForChannel(msgResult); onResultClick()"><b>Thread in der
+                  Message</b> - {{ threadResult.content }}
+              </p>
+            </div>
+            }
             }
           </div>
         </ng-container>

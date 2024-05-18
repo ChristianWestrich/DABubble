@@ -1,6 +1,6 @@
 @import './../../../../app/shared/styles/includeStyles.scss';
 
-.edit-profile-card{
+.edit-profile-card {
     position: absolute;
     right: 20px;
     top: 120px;
@@ -24,20 +24,21 @@
 
         >.back-btn {
             width: 40px;
-            >.back-btn-icon{
+
+            >.back-btn-icon {
                 mask-image: url(./../../../../assets/icons/close.svg);
             }
         }
     }
 }
 
-.card-content{
+.card-content {
     display: flex;
     flex-direction: column;
     gap: 45px;
     width: 100%;
 
-    > img{
+    >img {
         align-self: center;
         cursor: pointer;
         width: 200px;
@@ -45,27 +46,31 @@
         border-radius: 100%;
     }
 
-    > form{
+    >form {
         display: flex;
         flex-direction: column;
         gap: 45px;
-        >.form-content-wrapper{
+
+        >.form-content-wrapper {
             display: flex;
             flex-direction: column;
             gap: 16px;
-            .header-ipt-field{
+
+            .header-ipt-field {
                 display: flex;
                 align-items: center;
                 gap: 20px;
                 font-size: $fnt-size-S;
                 font-weight: bold;
-                >img{
+
+                >img {
                     width: 30px;
                     aspect-ratio: 1;
                 }
             }
         }
-        >.btn-wrapper{
+
+        >.btn-wrapper {
             display: flex;
             justify-content: center;
             gap: 45px;

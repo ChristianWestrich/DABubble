@@ -19,7 +19,7 @@ import { ChannelService } from '../../../services/channel.service';
 })
 export class UserlistitemComponent {
   userService = inject(UserService);
-  channelService = inject(ChannelService)
+  channelService = inject(ChannelService);
   overlayCtrlService = inject(OverlaycontrolService);
 
   @Input({ required: true }) user!: User;
@@ -38,7 +38,7 @@ export class UserlistitemComponent {
     if (this.checked) {
       return (
         this.user.id == this.overlayCtrlService.selectedUser?.id &&
-        this.overlayCtrlService.messageComponentType == 'directMessage' 
+        this.overlayCtrlService.messageComponentType == 'directMessage'
       );
     } else {
       return false;
@@ -46,10 +46,8 @@ export class UserlistitemComponent {
   }
 
   showMiddle() {
-    this.overlayCtrlService.showingMiddle.set(false)
-    this.overlayCtrlService.showingLeft.set(true)
-    this.overlayCtrlService.showingSearch.set(true)
+    this.overlayCtrlService.showingMiddle.set(false);
+    this.overlayCtrlService.showingLeft.set(true);
+    this.overlayCtrlService.showingSearch.set(true);
   }
-
-
 }

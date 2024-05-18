@@ -191,26 +191,32 @@
     gap: 20px;
 
     margin: 10px 10px 20px 10px;
+
     >.headline-login {
       font-size: 28px;
       margin: 0;
       gap: 5px;
     }
-    >.subheadline-login{
+
+    >.subheadline-login {
       font-size: 14px;
     }
   }
-  .input-fields-login{
+
+  .input-fields-login {
     font-size: 14px;
     padding: 14px 0px 14px 50px;
   }
-  .forgot-pw-login{
+
+  .forgot-pw-login {
     font-size: 16px;
     margin: 10px 0 10px 0;
   }
+
   .input-pw-login {
     margin-top: 10px;
   }
+
   .divider-login {
     margin: 0;
   }
@@ -220,10 +226,12 @@
     font-size: 14px;
     padding: 10px 10px
   }
+
   .create-account {
     position: absolute;
     bottom: 0;
   }
+
   .create-account {
     margin-top: 10px;
   }
@@ -232,6 +240,7 @@
     margin: 10px 0 20px 0;
     padding: 8px 26px 8px 26px;
   }
+
   .btn-container-login {
     margin-bottom: 10px;
     gap: 10px;

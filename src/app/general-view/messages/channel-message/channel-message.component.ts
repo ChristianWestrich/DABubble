@@ -41,9 +41,7 @@ export class ChannelMessageComponent implements OnInit {
   numberofThreads: [{}] = [{}];
   activeUser: User = new User();
   unsubscribeActiveUser;
-  today: Date = new Date()
-
-  
+  today: Date = new Date();
 
   @Input() channel: Channel = {} as Channel;
   unsubChannels: Subscription;
@@ -83,10 +81,10 @@ export class ChannelMessageComponent implements OnInit {
   }
 
   getTimestamp(msg: Message) {
-    return new Datestamp(msg.date)
+    return new Datestamp(msg.date);
   }
 
   proofForSameDay(msg: Message) {
-      return msg.date.getDate() == new Date().getDate() ? true : false
+    return msg.date.getDate() == new Date().getDate() ? true : false;
   }
 }

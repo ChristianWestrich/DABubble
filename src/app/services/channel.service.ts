@@ -77,9 +77,9 @@ export class ChannelService {
         let activeChannel = new Channel(cleanObj, channel.id);
         this.activeChannel$.next(activeChannel);
       }
-    }); 
-     
-      this.messageService.subMessages('Channels', channelID);
+    });
+
+    this.messageService.subMessages('Channels', channelID);
   }
 
   async createChannel(channel: Channel) {
@@ -105,8 +105,7 @@ export class ChannelService {
             err,
         ]);
       })
-      .then((docRef) => {
-      });
+      .then((docRef) => {});
   }
 
   async updateChannel(channel: Channel) {
@@ -117,8 +116,7 @@ export class ChannelService {
             err,
         ]);
       })
-      .then((docRef) => {
-      });
+      .then((docRef) => {});
   }
 
   setCleanChannelObj(obj: any) {
