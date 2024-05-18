@@ -327,8 +327,8 @@
 
   @keyframes logo-animation-mobile {
     0% {
-      top: 40%;
-      left: 40%;
+      top: 50%;
+      left: 45%;
       scale: 1.5;
       z-index: 4;
       transform: translate(-50% -50%);
@@ -336,8 +336,8 @@
     }
 
     80% {
-      top: 40%;
-      left: 40%;
+      top: 50%;
+      left: 45%;
       scale: 1.5;
       z-index: 4;
       transform: translate(-50% -50%);
@@ -359,8 +359,8 @@
 
   @keyframes logo2-animation-mobile {
     0% {
-      top: 40%;
-      left: 40%;
+      top: 50%;
+      left: 45%;
       scale: 2.5;
       transform: rotate(0deg) translateX(150px) rotate(0deg);
       z-index: 4;
@@ -369,8 +369,8 @@
     }
 
     80% {
-      top: 40%;
-      left: 40%;
+      top: 50%;
+      left: 45%;
       scale: 1;
       transform: rotate(360deg) translateX(100px) rotate(-360deg);
       z-index: 4;
