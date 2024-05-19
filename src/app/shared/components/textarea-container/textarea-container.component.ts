@@ -134,7 +134,8 @@ export class TextareaContainerComponent {
     }
     if (newMsgId) this.uploadFile(newMsgId);
     this.files = [];
-    this.newMessage.content = '';
+    //this.newMessage.content = '';
+    this.newMessage = new Message();
   }
 
   uploadFile(msgId: string) {

@@ -54,7 +54,7 @@ export class StorageService {
   async deleteFile(storageRef: StorageReference, fileName: string) {
     deleteObject(ref(storageRef, fileName))
       .then(() => {
-        console.log(fileName, 'wurde gelöscht');
+        //console.log(fileName, 'wurde gelöscht');
       })
       .catch((err) => {
         alert('file konnte nicht gelöscht werden :' + err);

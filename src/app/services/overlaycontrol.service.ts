@@ -23,7 +23,7 @@ export class OverlaycontrolService {
   overlayType: OverlayType = 'hide';
   threadService = inject(ThreadsService);
 
-  messageComponentType: MessageComponent = 'channel';
+  messageComponentType: MessageComponent = 'newMessage';
 
   directMessageService = inject(DirectMessageService);
   channelService = inject(ChannelService);

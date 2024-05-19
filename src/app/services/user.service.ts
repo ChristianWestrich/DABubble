@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { FirebaseInitService } from './firebase-init.service';
 import {
@@ -10,13 +10,15 @@ import {
 } from 'firebase/firestore';
 import { User } from '../shared/models/user.class';
 import { Router } from '@angular/router';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+  storageService = inject(StorageService);
+
   enteredPassword!: string;
-  // usersList: User[] = [];
   usersList$: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
   unsubUserList: any;
   unsubUser: any;
@@ -80,7 +82,7 @@ export class UserService {
     let userRef = this.getUserRef(userID);
     await getDoc(userRef).then((data) => {
       const userData = data.data();
-      const user = new User(userData);
+      let user = new User(userData);
       this.activeUser$.next(user);
       this.activeUser$.value.isAuth = true;
       this.activeUser$.value.status = 'Aktiv';
@@ -92,6 +94,11 @@ export class UserService {
       const user = new User(userData);
       this.activeUser$.next(user);
     });
+  }
+
+  async getCustomUserImgPath(userId: string){
+      let storageRef = this.storageService.getUserRef(userId);
+      return await this.storageService.getFileURL(storageRef,'customProfileIMG.svg');
   }
 
   async saveUser(user: User) {

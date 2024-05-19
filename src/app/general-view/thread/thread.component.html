@@ -16,7 +16,7 @@
     @for (message of this.messages; let i = $index; track message) {
     @if (i == 1) {
     <div class="separator">
-      <p><b>{{this.messages[0].answers.amount}}</b> Antworten</p> <img src="/assets/icons/Line.png" alt="">
+      <p><b>{{this.messages[0].answers.amount}}</b> Antworten</p> <img src="assets/icons/Line.png" alt="">
     </div>
     }
     <app-message-container [message]="message" [msgType]="'thread'"></app-message-container>

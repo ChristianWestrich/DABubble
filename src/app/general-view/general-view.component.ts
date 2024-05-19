@@ -56,7 +56,7 @@ export class GeneralViewComponent {
   activeChannelId: string = '';
   channels?: Channel[];
   activeChannel!: Channel;
-  unsubChannel: Subscription;
+  unsubChannel!: Subscription;
 
   messages: Message[] = [];
   unsubMessages: Subscription;
@@ -86,14 +86,17 @@ export class GeneralViewComponent {
       this.activeUser = userData;
     });
 
-    this.channelService.subChannel(this.activeUser.channelIDs[0]);
-    this.unsubChannel = this.channelService.activeChannel$.subscribe(
-      (channel) => {
-        if (channel) {
-          this.activeChannel = channel;
+    if(this.activeUser.channelIDs[0]){
+      this.overlayCtrlService.showMessageComponent('channel');
+      this.channelService.subChannel(this.activeUser.channelIDs[0]);
+      this.unsubChannel = this.channelService.activeChannel$.subscribe(
+        (channel) => {
+          if (channel) {
+            this.activeChannel = channel;
+          }
         }
-      }
-    );
+      );
+    }
 
     this.unsubMessages = this.messageService.messages$.subscribe((messages) => {
       this.messages = messages;
@@ -110,6 +113,8 @@ export class GeneralViewComponent {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    if(this.unsubChannel)this.unsubChannel.unsubscribe();
+    this.unsubMessages.unsubscribe();
   }
 
   async onInputChange() {
