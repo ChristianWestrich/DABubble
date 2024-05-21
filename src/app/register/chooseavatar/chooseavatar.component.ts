@@ -9,6 +9,7 @@ import { User } from '../../shared/models/user.class';
 // import services
 import { StorageService } from '../../services/storage.service';
 import { RegisterService } from '../../services/register.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-chooseavatar',
@@ -23,6 +24,7 @@ export class ChooseavatarComponent {
   @Output() isShowen = new EventEmitter();
 
   storageService = inject(StorageService);
+  userService = inject(UserService);
 
   customImage: File | undefined;
   customImgPath: string | undefined;
@@ -56,7 +58,7 @@ export class ChooseavatarComponent {
     if (this.user.password) {
       await this.registerService.createAcc(this.user.email, this.user.password);
       this.toggleOverlay = !this.toggleOverlay;
-      this.uploadUserImage(this.registerService.userToCreate$.value.id);
+      await this.uploadUserImage(this.registerService.userToCreate$.value.id);
       this.deleteUserData();
       this.goBack();
     }
@@ -87,9 +89,18 @@ export class ChooseavatarComponent {
     }
   }
 
-  uploadUserImage(userID: string) {
-    if (this.customImage)
-      this.storageService.uploadProfileIMG(userID, this.customImage);
+  async uploadUserImage(userID: string) {
+    if (this.customImage){
+      this.user.id = userID;
+      await this.storageService.uploadProfileIMG(userID, this.customImage);
+      let storageRef = this.storageService.getUserRef(userID);
+      let fileName ='customProfileIMG.' + this.customImage.name.split('.').slice(-1);
+      let path = await this.storageService.getFileURL(storageRef,fileName);
+      if(path){
+        this.user.imgPath = path;
+        this.userService.saveUser(this.user);
+      }
+    }
   }
 
   clearCustomImg() {
