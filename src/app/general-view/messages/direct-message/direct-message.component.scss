@@ -98,6 +98,9 @@
       display: flex;
       align-items: flex-end;
       gap: 15px;
+      >img{
+        width: 55px;
+      }
     }
   }
 }
@@ -138,10 +141,8 @@
 
     >.content-footer-wrapper {
       padding-left: 25px;
-
       >.msg-second-user {
         gap: 15px;
-
         >img {
           width: 55px;
         }
